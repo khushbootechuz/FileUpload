@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="uploadFile">
+<!-- BEGIN HEAD -->
+
+<head>
+    <title> Demo</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="norton-safeweb-site-verification" content="qn6voimdi-e5vtsne1bw7jz79w8ybnkbo82oboledhmltv9ifknw8kzvu5u--0j128xioz7p4hvednj9yvgoh8ihd0cuez5ykbjmkccsfhy9efd103qn812tlbwei-bj"
+    />
+    <meta name="p:domain_verify" content="e19289ce18c743ac70b11b7468ac395c" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" />
+
+    <link href="assets/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/metronic/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/metronic/css/components.min.css" rel="stylesheet" />
+    <link href="assets/metronic/css/bootstrap-fileinput.css" rel="stylesheet" type="text/css">
+
+    <link href="assets/css/login.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="signUp-page" > 
+
+    <!-- BEGIN CONTAINER -->
+    <div class="main-container">
+        <form name="form" novalidate>
+            <div class="content" id="registerForm" data-ng-controller="UploadController as file">
+               <div id="portlet-title" class="portlet light portlet-fit bordered">
+                    <div class="portlet-title">
+                        <div class="caption"><b class="purchase-title">UPLOAD FILE</b></div>
+                    </div>
+                    <br>
+                    <div class="text-danger" ng-if="serverError">{{error}}</div>
+                    <div class="success">{{serverSuccess}}</div>
+                    <div class="resume">
+                        <p class="text-danger" ng-bind="purchase.error"></p>
+                        <div class="portlet light portlet-fit ">
+                            <div id="file-input">
+                                <div class="fileinput fileinput-new btn-position browseForFileInput" data-provides="fileinput">
+                                    <span class="btn btn-default btn-sm btn-file btn-inp">
+                                        <span class="fileinput-new" ><img src="assets/img/Documents.png">&nbsp&nbsp 
+                                        Upload from my Computer </span>
+                                    <span class="fileinput-exists"><img src="assets/img/Documents.png">&nbsp&nbsp  Upload from my Computere </span>
+                                    <input type="hidden" value="" name="...">
+                                    <input type="file" id='resumeFile' name="resumeFile" accept=".doc, .docx, .pdf, .txt, .xls, .xlsx, .csv, .rtf, .ppt, .pptx, .odt, .ods, .odp, .jpg" 
+                                        fileread="file.newResume.file" ngf-select="file.setResume($files)"
+                                    /> 
+                                    </span>&nbsp;
+                                </div>
+                                <div class="fileinput fileinput-new btn-position">
+                                    <button class="btn btn-default btn-sm btn-inp" data-ng-click="file.openDropBox()">
+                                        <img src="assets/img/dropbox.png" >&nbsp&nbsp Upload from Dropbox 
+                                        </button>
+                                </div>
+                                <div class="fileinput fileinput-new btn-position">
+                                    <button class="btn btn-default btn-sm btn-inp" data-ng-click="file.openGoogleDrive()">
+                                        <img src="assets/img/Google-Drive.png">&nbsp&nbsp Upload from Google Drive</button>
+                                </div>
+                                <br>
+                                <div class="text-sm-gray"> File supported: .doc, .docx, .pdf, .txt, .xls, .ppt, .odt, .ods, .odp, .jpg, .pptx
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- END CONTAINER -->
+    <script src="assets/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/node_modules/angular/angular.min.js"></script>
+    <script src="assets/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="assets/node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script> 
+    <script src="assets/metronic/js/bootstrap-fileinput.js" type="text/javascript"></script>
+
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+    <script src="https://apis.google.com/js/client.js" type="text/javascript"></script>
+    <script src="https://www.dropbox.com/static/api/2/dropins.js" type="text/javascript" id="dropboxjs" data-app-key="avxma05uig0ud7q"></script>
+
+    <script src="index.js" type="text/javascript"></script>
+    <script src="services/googleDriveApi.js" type="text/javascript"></script>
+</body>
+<!-- END BODY -->
+
+</html>
