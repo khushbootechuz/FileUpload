@@ -77,7 +77,6 @@ app.controller('UploadController', ['$scope', '$http', '$rootScope', 'googleDriv
                         	filePath: '/Files/'+ file.name
                     	}
                     }).then(function success(response) {
-                    	console.log(response.data);
                         if(response.data.success) {
                             $scope.serverSuccess = "File uploaded SuccessFully";
                             $scope.serverError = false;

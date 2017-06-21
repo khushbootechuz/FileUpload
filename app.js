@@ -14,7 +14,9 @@ app.use(express.static(path.join(__dirname, '/client/assets')));
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/index.html'));
 });
-app.listen(8080);
+app.listen(8080, function (argument) {
+    console.log('Express HTTPS server listening on port ' + 8080);
+});
 
 app.use(bodyParser.json());
 app.use('/', router);
