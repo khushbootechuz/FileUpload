@@ -6,6 +6,6 @@ goto app folder
 Do $ npm install
 
 ###Run App with
-$ nodejs server.js
+$ nodejs app.js
 
 App run on http://localhost:8080
