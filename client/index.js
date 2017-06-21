@@ -32,6 +32,7 @@ app.controller('UploadController', ['$scope', '$http', '$rootScope', 'googleDriv
     self.setResume = function () {
         var resume = document.getElementById('resumeFile').files[0];
         $scope.serverError = false;
+        $scope.serverSuccess = '';
         if(!resume){
             return;
         }
@@ -58,10 +59,12 @@ app.controller('UploadController', ['$scope', '$http', '$rootScope', 'googleDriv
     }
     self.openDropBox = function () {
         $scope.serverError = false;
+        $scope.serverSuccess = '';
         Dropbox.choose(self.options);
     }
     self.openGoogleDrive = function () {
         $scope.serverError = false;
+        $scope.serverSuccess = '';
         var picker = new googleDriveApi.FilePicker({
             onSelect: function (file) {
                 $('.browseForFileInput').fileinput('clear');

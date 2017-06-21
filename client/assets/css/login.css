@@ -1176,5 +1176,11 @@ div.close {
     border-color: #00b0f0;
 }
 .nav>li.active>a{
-        background-color: #00b0f0!important;
+    background-color: #00b0f0!important;
+}
+
+.greenFont {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6
 }
